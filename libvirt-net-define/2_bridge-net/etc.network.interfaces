@@ -1,0 +1,20 @@
+# ovs bridge config
+auto br-ex
+iface br-ex inet static
+address 172.16.1.100/24
+gateway 172.16.1.1
+dns-nameservers 8.8.8.8
+
+# linux bridge config
+auto br-ex
+iface br-ex inet static
+    bridge_ports eth0
+        address 172.16.1.100/24
+  gateway 172.16.1.1
+  dns-nameservers 8.8.8.8
+  
+iface eth0 inet manual
+  up ifconfig $IFACE 0.0.0.0 up
+  up ip link set $IFACE promisc on
+  down ip link set $IFACE promisc off
+  down ifconfig $IFACE down

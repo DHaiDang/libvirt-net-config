@@ -1,0 +1,10 @@
+<network>
+  <name>nat-net</name>
+  <bridge name="br-nat"/>
+  <forward mode="nat"/>
+  <ip address="172.16.1.1" netmask="255.255.255.0">
+    <dhcp>
+      <range start="172.16.1.2" end="172.16.1.254"/>
+    </dhcp>
+  </ip>
+</network>
