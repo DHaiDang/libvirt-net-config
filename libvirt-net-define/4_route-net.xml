@@ -1,0 +1,10 @@
+<network>
+  <name>wan-net</name>
+  <bridge name="br-wan" />
+  <forward mode="route"/>
+  <ip address="203.0.113.88" netmask="255.255.255.248">
+    <dhcp>
+      <range start="203.0.113.89" end="203.0.113.94"/>
+    </dhcp>
+  </ip>
+</network>
