@@ -2,4 +2,5 @@
   <name>bridge-net</name>
   <forward mode='bridge'/>
   <bridge name='br-ex'/>
+  <virtualport type='openvswitch'/>
 </network>
